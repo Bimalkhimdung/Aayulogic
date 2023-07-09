@@ -3,7 +3,19 @@ pipeline{
     stages{
         stage("Checking for Jnekins File .."){
         steps{
-            echo 'Sucess'
+            script{
+                def filepath='./script.sh'
+
+                if(fileExits(filepath)){
+                    sh " chmod +x $filepath"
+
+                    sh "./$script.sh"
+                }
+                else{
+                    echo"file doesnot exits"
+                }
+
+            }
         }
     }
     }
