@@ -1,11 +1,11 @@
 pipeline{
     agent any
     stages{
-        stage("Fetching Code.."){
+        stage("Checking for Jnekins File .."){
         steps{
-            echo 'clonning code'
+            echo 'Sucess'
         }
     }
     }
-    
+
 }
