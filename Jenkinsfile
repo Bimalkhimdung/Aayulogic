@@ -2,14 +2,14 @@ pipeline{
     agent any
     stages{
         stage("Checking for Jnekins File .."){
-        steps{
+         steps{
             script{
-                def filepath='./script.sh'
+                def filepath = './script.sh'
 
                 if(fileExits(filepath)){
                     sh " chmod +x $filepath"
 
-                    sh "./$script.sh"
+                    sh "./$filepath"
                 }
                 else{
                     echo"file doesnot exits"
