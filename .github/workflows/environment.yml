@@ -1,0 +1,22 @@
+name: "Environment test"
+
+on:
+  workflow_dispatch:
+#T
+env:
+  value1: bimal
+  value2: Khimdung
+
+jobs:
+  testjob:
+    name: "testing evnironment variable"
+
+    runs-on: ubuntu-latest
+    env:
+      value_local1: Hi
+      value_local2: how are you?
+
+    steps:
+      - name: printing values of variable
+        run: |
+          echo "$value_local1 $value1 $value2 $value_local2 "

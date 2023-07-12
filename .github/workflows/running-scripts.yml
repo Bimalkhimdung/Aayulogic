@@ -1,0 +1,9 @@
+name: test
+
+on: 
+    push: 
+        branches: ["main"]
+
+jobs: 
+    steps: 
+     - run: npm install -g bats

@@ -2,5 +2,19 @@ name: Test workflow
 
 on: 
   push:
-    branches: [ "main"]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+#allows you to run this workflow manually from the action tab
+
+  workflow_dispatch:
+
+jobs:
+  build-app:
+   runs-on: ubuntu-latest
+
+   steps: 
+     - uses: action/checkout@v3  
+      run: echo "hello"
 
