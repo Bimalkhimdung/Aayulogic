@@ -20,4 +20,11 @@ jobs:
     steps:
       - name: printing values of variable
         run: |
-          echo "${{env.value_local1}} ${{env.value1}} ${{env.value2}} ${{env.value_local2}} "
+          echo "${{env.value_local1}} ${{env.value1}} ${{env.value2}} ${{env.value_local2}}"
+
+ Default-env:
+    name: Checking default variable
+    runs-on: ubuntu-latest
+    steps:
+     run: |
+        echo "${{env.GITHUB_RUN_NUMBER}}""
