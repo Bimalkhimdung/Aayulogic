@@ -22,7 +22,6 @@ jobs:
   job_2:
     name: Downloading artifact
 
-<<<<<<< HEAD
     runs-on: ubuntu-latest
 
     needs: job_1
@@ -32,27 +31,3 @@ jobs:
         with:
           name: file
       - run: cat file.txt
-=======
-         - name: "Create a local file" 
-           run: |
-                  echo "I am storing this file as workflow artifact" > file.txt
-         - uses: action/upload-artifact@v2
-           with:
-                    name: file
-                    path: file.txt
-    job_2:
-        name: Downloading artifact
-
-        runs-on: ubuntu-latest
-
-        needs: job_1
-        steps:
-            - name: "Downloading artifact"
-              uses: action/download-artifact@v2
-              with: 
-                name: file
-              run: cat file.txt
-
-
-                  
->>>>>>> e6906aea4d4f58421f90addc8965d0460135c9ab
