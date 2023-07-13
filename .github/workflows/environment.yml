@@ -1,4 +1,4 @@
-name: "Environment test"
+name: Environment test
 
 on:
   workflow_dispatch:
@@ -22,9 +22,9 @@ jobs:
         run: |
           echo "${{ env.value_local1 }} ${{ env.value1 }} ${{ env.value2 }} ${{ env.value_local2 }}"
 
- Default-env:
+  Default-env:
     name: Checking default variable
     runs-on: ubuntu-latest
     steps:
-     run: |
-        echo "${{env.GITHUB_RUN_NUMBER}}""
+      - name: Checking for default environment
+        run: echo "${{env.GITHUB_RUN_NUMBER}}""
