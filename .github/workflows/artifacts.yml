@@ -15,7 +15,7 @@ jobs:
         steps:
 
          - name: "Create a local file" 
-            runs: |
+           run: |
                   echo "I am storing this file as workflow artifact" > file.txt
          - uses: action/upload-artifact@v2
            with:
@@ -32,7 +32,7 @@ jobs:
               uses: action/download-artifact@v2
               with: 
                 name: file
-              runs: cat file.txt
+              run: cat file.txt
 
 
                   
